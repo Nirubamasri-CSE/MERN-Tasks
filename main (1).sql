@@ -20,7 +20,6 @@ select sum(Marks) from student;
 create table stdcourse(course Id integer,Name varchar(20));
 
 insert into stdcourse values(1,'Sri');
-insert into stdcourse values(1,'Sri');
 insert into stdcourse values(2,'Kiru');
 insert into stdcourse values(3,'Nive');
 insert into stdcourse values(4,'Niru');
