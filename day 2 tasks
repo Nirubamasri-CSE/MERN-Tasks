@@ -1,0 +1,356 @@
+--create database
+use testdb
+--creating new collection with insertion
+db.testcollection.insert({name: 'NIRU',
+  model: 'xli',
+  rented_user_count: 2,
+  mileage: 20,
+  transmission: 'automatic',
+  rent: 1500,
+  fuel: 'petrol',
+  image_url: 'https://example.com'})
+--to view
+db.testcollection.find()
+{
+  _id: ObjectId("6491c6a648ab8bd5d5da9d22"),
+  name: 'NIRU',
+  model: 'xli',
+  rented_user_count: 2,
+  mileage: 20,
+  transmission: 'automatic',
+  rent: 1500,
+  fuel: 'petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491ce7075e3fe07f74fcc98"),
+  name: 'NIRU',
+  model: 'xli',
+  rented_user_count: 2,
+  mileage: 20,
+  transmission: 'automatic',
+  rent: 1500,
+  fuel: 'petrol',
+  image_url: 'https://example.com'
+}
+--inserting many elements
+
+db.testcollection.insertMany([{name: "ZOOM", model: "GLX", rented_user_count: 4, mileage: 18, transmission: "Automatic", rent: 1600, fuel: "Petrol", image_url: "https://example.com"},{name: "RACER", model: "VXR", rented_user_count: 1, mileage: 22, transmission: "Automatic", rent: 1400, fuel: "Petrol", image_url: "https://example.com"},{name: "SPEEDY", model: "SLE", rented_user_count: 3, mileage: 19, transmission: "Automatic", rent: 1550, fuel: "Petrol", image_url: "https://example.com"},{name: "CITYCRUZ", model: "SE", rented_user_count: 2, mileage: 20, transmission: "Automatic", rent: 1500, fuel: "Petrol", image_url: "https://example.com"},{name: "ECOGO", model: "LE", rented_user_count: 2, mileage: 21, transmission: "Automatic", rent: 1450, fuel: "Petrol", image_url: "https://example.com"},{name: "LUXCAR", model: "XLE", rented_user_count: 2, mileage: 20, transmission: "Automatic", rent: 1500, fuel: "Petrol", image_url: "https://example.com"},{name: "DRIVEZ", model: "GTS", rented_user_count: 4, mileage: 18, transmission: "Automatic", rent: 1600, fuel: "Petrol", image_url: "https://example.com"},{name: "COMFY", model: "DX", rented_user_count: 1, mileage: 22, transmission: "Automatic", rent: 1400, fuel: "Petrol", image_url: "https://example.com"},{name: "COMFY", model: "DX", rented_user_count: 1, mileage: 22, transmission: "Automatic", rent: 1400, fuel: "Petrol", image_url: "https://example.com"},{name: "COMFY", model: "DX", rented_user_count: 1, mileage: 22, transmission: "Automatic", rent: 1400, fuel: "Petrol", image_url: "https://example.com"},{name: "SWIFTY", model: "VTEC", rented_user_count: 3, mileage: 19, transmission: "Automatic", rent: 1550, fuel: "Petrol", image_url: "https://example.com"}])
+
+--to view
+
+db.testcollection.find()
+{
+  _id: ObjectId("6491c6a648ab8bd5d5da9d22"),
+  name: 'NIRU',
+  model: 'xli',
+  rented_user_count: 2,
+  mileage: 20,
+  transmission: 'automatic',
+  rent: 1500,
+  fuel: 'petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491c6a648ab8bd5d5da9d22"),
+  name: 'NIRU',
+  model: 'xli',
+  rented_user_count: 2,
+  mileage: 20,
+  transmission: 'automatic',
+  rent: 1500,
+  fuel: 'petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcc99"),
+  name: 'ZOOM',
+  model: 'GLX',
+  rented_user_count: 4,
+  mileage: 18,
+  transmission: 'Automatic',
+  rent: 1600,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  "_id": {
+    "$oid": "6491d55d75e3fe07f74fcc9a"
+  },
+  "name": "RACER",
+  "model": "VXR",
+  "rented_user_count": 1,
+  "mileage": 22,
+  "transmission": "Automatic",
+  "rent": 1400,
+  "fuel": "Petrol",
+  "image_url": "https://example.com"
+},
+{
+  "_id": {
+    "$oid": "6491d55d75e3fe07f74fcc9b"
+  },
+  "name": "SPEEDY",
+  "model": "SLE",
+  "rented_user_count": 3,
+  "mileage": 19,
+  "transmission": "Automatic",
+  "rent": 1550,
+  "fuel": "Petrol",
+  "image_url": "https://example.com"
+},
+{
+  "_id": {
+    "$oid": "6491d55d75e3fe07f74fcc9c"
+  },
+  "name": "CITYCRUZ",
+  "model": "SE",
+  "rented_user_count": 2,
+  "mileage": 20,
+  "transmission": "Automatic",
+  "rent": 1500,
+  "fuel": "Petrol",
+  "image_url": "https://example.com"
+},
+{
+  "_id": {
+    "$oid": "6491d55d75e3fe07f74fcc9d"
+  },
+  "name": "ECOGO",
+  "model": "LE",
+  "rented_user_count": 2,
+  "mileage": 21,
+  "transmission": "Automatic",
+  "rent": 1450,
+  "fuel": "Petrol",
+  "image_url": "https://example.com"
+},
+{
+  "_id": {
+    "$oid": "6491d55d75e3fe07f74fcc9e"
+  },
+  "name": "LUXCAR",
+  "model": "XLE",
+  "rented_user_count": 2,
+  "mileage": 20,
+  "transmission": "Automatic",
+  "rent": 1500,
+  "fuel": "Petrol",
+  "image_url": "https://example.com"
+},
+{
+  "_id": {
+    "$oid": "6491d55d75e3fe07f74fcc9f"
+  },
+  "name": "DRIVEZ",
+  "model": "GTS",
+  "rented_user_count": 4,
+  "mileage": 18,
+  "transmission": "Automatic",
+  "rent": 1600,
+  "fuel": "Petrol",
+  "image_url": "https://example.com"
+},
+{
+  "_id": {
+    "$oid": "6491d55d75e3fe07f74fcca0"
+  },
+  "name": "COMFY",
+  "model": "DX",
+  "rented_user_count": 1,
+  "mileage": 22,
+  "transmission": "Automatic",
+  "rent": 1400,
+  "fuel": "Petrol",
+  "image_url": "https://example.com"
+},
+{
+  "_id": {
+    "$oid": "6491d55d75e3fe07f74fcca1"
+  },
+  "name": "COMFY",
+  "model": "DX",
+  "rented_user_count": 1,
+  "mileage": 22,
+  "transmission": "Automatic",
+  "rent": 1400,
+  "fuel": "Petrol",
+  "image_url": "https://example.com"
+},
+{
+  "_id": {
+    "$oid": "6491d55d75e3fe07f74fcca2"
+  },
+  "name": "COMFY",
+  "model": "DX",
+  "rented_user_count": 1,
+  "mileage": 22,
+  "transmission": "Automatic",
+  "rent": 1400,
+  "fuel": "Petrol",
+  "image_url": "https://example.com"
+},
+{
+  "_id": {
+    "$oid": "6491d55d75e3fe07f74fcca3"
+  },
+  "name": "SWIFTY",
+  "model": "VTEC",
+  "rented_user_count": 3,
+  "mileage": 19,
+  "transmission": "Automatic",
+  "rent": 1550,
+  "fuel": "Petrol",
+  "image_url": "https://example.com"
+}
+
+
+--sorting of elements
+
+
+db.testcollection.find().sort({fuel:-1})
+
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcc9c"),
+  name: 'CITYCRUZ',
+  model: 'SE',
+  rented_user_count: 2,
+  mileage: 20,
+  transmission: 'Automatic',
+  rent: 1500,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcca0"),
+  name: 'COMFY',
+  model: 'DX',
+  rented_user_count: 1,
+  mileage: 22,
+  transmission: 'Automatic',
+  rent: 1400,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcca1"),
+  name: 'COMFY',
+  model: 'DX',
+  rented_user_count: 1,
+  mileage: 22,
+  transmission: 'Automatic',
+  rent: 1400,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcca2"),
+  name: 'COMFY',
+  model: 'DX',
+  rented_user_count: 1,
+  mileage: 22,
+  transmission: 'Automatic',
+  rent: 1400,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcc9f"),
+  name: 'DRIVEZ',
+  model: 'GTS',
+  rented_user_count: 4,
+  mileage: 18,
+  transmission: 'Automatic',
+  rent: 1600,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcc9d"),
+  name: 'ECOGO',
+  model: 'LE',
+  rented_user_count: 2,
+  mileage: 21,
+  transmission: 'Automatic',
+  rent: 1450,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcc9e"),
+  name: 'LUXCAR',
+  model: 'XLE',
+  rented_user_count: 2,
+  mileage: 20,
+  transmission: 'Automatic',
+  rent: 1500,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491c6a648ab8bd5d5da9d22"),
+  name: 'NIRU',
+  model: 'xli',
+  rented_user_count: 2,
+  mileage: 20,
+  transmission: 'automatic',
+  rent: 1500,
+  fuel: 'petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491ce7075e3fe07f74fcc98"),
+  name: 'NIRU',
+  model: 'xli',
+  rented_user_count: 2,
+  mileage: 20,
+  transmission: 'automatic',
+  rent: 1500,
+  fuel: 'petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcc9a"),
+  name: 'RACER',
+  model: 'VXR',
+  rented_user_count: 1,
+  mileage: 22,
+  transmission: 'Automatic',
+  rent: 1400,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcc9b"),
+  name: 'SPEEDY',
+  model: 'SLE',
+  rented_user_count: 3,
+  mileage: 19,
+  transmission: 'Automatic',
+  rent: 1550,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcca3"),
+  name: 'SWIFTY',
+  model: 'VTEC',
+  rented_user_count: 3,
+  mileage: 19,
+  transmission: 'Automatic',
+  rent: 1550,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+{
+  _id: ObjectId("6491d55d75e3fe07f74fcc99"),
+  name: 'ZOOM',
+  model: 'GLX',
+  rented_user_count: 4,
+  mileage: 18,
+  transmission: 'Automatic',
+  rent: 1600,
+  fuel: 'Petrol',
+  image_url: 'https://example.com'
+}
+
