@@ -1,0 +1,231 @@
+//palindrome
+
+
+let string = "Tamil";
+let pal = string.split('');
+pal.reverse();
+console.log(pal);
+console.log(pal);
+
+//array callback methods\
+
+//for each
+
+
+
+let obj2=[1,2,3,4,5];
+for(let key of obj2){
+    console.log(key);
+}
+
+
+let names = ["vijay","krishna","kavin","Niru","Sri"];
+names.forEach((ele) => {
+    console.log(ele);
+})
+
+//repeat
+
+let names1 = ["vijay","krishna","kavin","Niru","Sri"];
+names1.forEach((ele1) => {
+    console.log(ele1.repeat(3));
+})
+
+
+
+let names2 = ["vijay","krishna","kavin","Niru","Sri"];
+let num_arr = [1,2,3,4,5];
+num_arr.forEach((ele)=>{
+    console.log(ele*ele);
+})
+
+
+let names3 = ["vijay","krishna","kavin","Niru","Sri"];
+let num_arr1 = [1,2,3,4,5];
+num_arr1.forEach((ele,ele2)=>{
+    console.log(ele*ele);
+})
+
+
+let names4 = ["vijay","krishna","kavin","Niru","Sri"];
+let num_arr2 = [1,2,3,4,5];
+num_arr2.forEach((ele,ele2)=> console.log(ele*ele));
+
+
+//map()
+let arr4= names.map(ele => {
+        return ele.repeat(3)}
+);
+console.log(arr4);
+
+
+let arr6 = names.map(ele => ele);
+console.log(arr6);
+
+//filter()
+
+let ans_filter = num_arr.filter(ele => {
+    return ele%2;
+})
+
+console.log(ans_filter);
+
+let ans_filter1 = num_arr.filter(ele => {
+    return !(ele%2);
+})
+
+console.log(ans_filter1);
+
+//task : return array names above the birth year 2003
+
+let names_obj = [
+    {
+        name:"Sri",
+        dob:2003
+    },
+    {
+        name:"Niru",
+        dob:2002
+    },
+    {
+        name:"Kiru",
+        dob:2004
+    },
+    
+    {
+        name:"Nive",
+        dob:2004
+    }
+];
+let ans_arr = names_obj.map(ele => {
+    if(ele.dob>=2003) return ele.name;
+})
+console.log(ans_arr);
+
+
+let ans_arr1 = names_obj.filter(ele => ele.dob>=2003).map(ele=>ele.name);
+console.log(ans_arr1);
+
+
+
+//shallow copy
+
+const array = [1,2,3,4,5];
+const array1=[...array];
+array[2] = 200;
+console.log(array1,array);
+
+const obj_cp={
+    name:"sece",
+    year:"2023"
+};
+const obj_cp2= {...obj_cp};
+obj_cp.year = 2024;
+console.log(obj_cp,obj_cp2);
+
+
+
+//task employee name age salary phonenumber
+
+let emp = [{
+    name:"niru",
+    age:19,
+    salary:60000
+},
+{
+    name:"sri",
+    age:20,
+    salary:70000
+},
+{
+    name:"kiru",
+    age:24,
+    salary:25000
+},
+{
+    name:"nive",
+    age:28,
+    salary:7000
+}]
+let obj_ans = emp.filter(ele => ele.salary >= 25000).map(ele => {
+    return {name: ele.name, age: ele.age}
+});
+console.log(obj_ans);
+
+//de-structuring --> unpacking elements                ...rest operator in de structuring
+
+let arr_name = [10,20,30,40,50];
+let [a1,b1,c1,d1,e1] = arr_name;
+console.log(a1,b1,c1,d1,e1);
+
+let arr_name1 = [10,20,30,40,50,60,70,80];
+let [a2,b2,c2,d2,...e2] = arr_name1;
+console.log(e2);
+
+let arr_name3 = [10,20,30,40,50];
+let [a3,b3, ,c3,d3] = arr_name;
+console.log(a3,b3,c3,d3);
+
+let arr_name4 = [10,20,30,40,50,60,70,80,90,100];
+let [a4,b4, ,c6,d4, ...e4] = arr_name4;
+console.log(a4,b4,c6,d4,e4);
+
+let obj1 = {
+    clgname:"sece",
+    year:2023,
+    city:"cbe",
+    dept:"CSE",
+    lpa:"50lpa",
+    colour:"blue"
+};
+let {clgname : college , year, city,colour = "green",...remaining} = obj1;
+console.log(college,year,city,colour);
+
+
+setTimeout(() => console.log('hfuvyb'), 3000);
+
+
+setInterval(() => console.log('hfuvyb'), 1000);
+
+
+setTimeout(() => console.log('hfuvyb'), 0);
+
+
+//java script -> asynchronus call
+
+
+//promise
+//state = pending, resolve, reject
+
+
+//api call promise
+
+
+const promise = new Promise((resolve, reject)=> {
+    setTimeout(()=>{
+        reject('resolved')
+    },4000)
+})
+promise
+.then((value) => console.log(value))
+.catch(() => console.log('error'));
+
+
+//api call
+
+
+const abc = fetch('https://jsonplaceholder.typicode.com/todos');
+abc
+.then((response)=>response.json())
+.then((data)=>console.log(data[0]))
+.catch((error)=>{console.log('error',error)});
+
+
+const apicall = async() => {
+    const promise_from_api = await fetch('https://jsonplaceholder.typicode.com/todos');
+    const data = await promise_from_api.json();
+    console.log(data); 
+}
+apicall();
+
+
