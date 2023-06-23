@@ -1,0 +1,176 @@
+//DOM = document object model
+
+
+document.body.innerText = "HELLO";
+document.body.innerHTML = '<div>SRI</div>';
+document.body.style.backgroundColor="lightgreen"
+
+console.log(document.body.children);
+const allChild = document.body.children;
+
+setTimeout(()=> {
+    allChild[0].style.color="green";
+    allChild[0].innerText="green";
+},2000)
+
+setTimeout(() => {
+    allChild[1].style.color="pink";
+    allChild[1].innerText="pink";
+},4000)
+
+setTimeout(()=> {
+    allChild[2].style.color="blue";
+    allChild[2].innerText="blue";
+},6000)
+
+let refresh_value = true;
+setInterval(() => {
+    allChild[0].style.color = (refresh_value ? "red" : "orange");
+    refresh_value=!refresh_value;
+},2000)
+
+
+const tag = docment.getElementsByCLassName('cse');
+tag[0].innerText = 'ncksbvnl';
+console.log(tag);
+
+const id = document.getElementById('unique');
+id.innerText = id based solution';
+
+
+
+
+const tag = docment.getElementsByCLassName('cse');
+tag[0].innerText = 'ncksbvnl';
+console.log(tag);
+
+const id = document.getElementById('unique');
+id.innerText = 'id based solution';
+
+
+
+
+
+const button = document.getElementById('login-button');
+const username = document.getElementById('user');
+const password = document.getElementById('pass');
+const form = document.getElementById('LOGIN');
+console.log(form);
+button.addEventListener('click',(event)=>{
+    console.log('click');
+})
+
+form.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    console.log('submit',username.value,password.value);
+})
+
+
+
+
+
+/*const USER_DATA = [
+    {
+    id: 1,
+    name: 'sri',
+    age:20,
+    email:'sri@gmail.com'
+    }
+];
+
+//CRUD
+
+const addUser = (new_user) => {
+    //add 
+      USER_DATA.push(newuser);
+}
+
+const editUser = (id=1,key='name',value='xyz')=>{
+    //edit
+      USER_DATA[id-1][key]=value;
+}
+
+const deleteUser = (id) => {
+    //delete
+      const user_index =USER_DATA.findIndex((user) => user.id === id);
+      if(user_index != -1){
+        USER_DATA.splice(user_index,1);
+      }
+}
+
+const newuser=({
+    id:2,
+    name:'niru',
+    age:16,
+    email:'niru@gmail.com'
+    }
+);
+addUser(newuser);
+editUser(2,"age",19);
+deleteUser(1,'name','sri');
+console.log(USER_DATA);
+
+*/
+
+
+
+export const addUser = (new_user) => {
+    USER_DATA.push(new_user);
+}
+export const editUser = (id=1,key='name',value='xyz')=>{
+    USER_DATA[id][key]=value;
+}
+export const deleteUser = (id) => {
+    const user_index =USER_DATA.findIndex((user) => user.id === id);
+    if(user_index != -1){
+      USER_DATA.splice(user_index,1);
+    }
+}
+
+//USERMODULE.js
+
+
+let USER_DATA;
+export default USER_DATA = [
+    {
+        id: 1,
+        name: 'sri',
+        age:20,
+        email:'sri@gmail.com'
+        }
+];
+
+
+
+
+//index.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECE</title>
+</head>
+<body>
+    <div>
+        <form id="LOGIN" action="">
+            <div>
+                <label for="user">USERNAME</label>
+                <input type="text" name="username" id="user">
+            </div>
+            <div>
+                <label for="pass">PASSWORD</label>
+                <input type="password" name="password" id="pass">
+            </div>
+            <button id = "login-button">login</button>
+        </form>
+    </div>
+    
+    <script  type = "module" src="index.js"></script>
+
+</body>
+</html>
+
+
